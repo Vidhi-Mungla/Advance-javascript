@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>      
+        .main 
+        {
+            height: 100vh;
+            background: url('');
+            background-size: cover;
+        }
+        img 
+        {
+            position: relative;
+            animation: Scale 30s infinite ;
+        }
+   
+        @keyframes Scale 
+        {
+            100%
+            {
+                transform: scale(1.5);
+            }
+        }
+
+      
+        .form
+        {
+            background: rgba(15, 11, 78, 0.9);
+            margin: auto;
+            width: 400px;
+            position: absolute;
+            top: 300px;
+            left: 550px;
+            color: white;
+        }
+        .text
+        {
+            border: 1px solid white;
+            color: white;
+        }
+
+        li 
+       {
+        list-style-type: none;
+         font-size: 12pt;
+         position: absolute;
+         left: 0;
+      }
+
+      input
+       {
+         font-size: 15pt;
+      }
+      input:focus, textarea:focus
+      {
+         background-color:lightyellow;
+      }
+      input submit
+       {
+         font-size: 10pt;
+      }
+      .rq {
+         color: #FF0000;
+         font-size: 8pt;
+      }
+      .fm 
+      {
+        position: relative;
+      }
+	  
+	  
+    </style>
+</head>
+
+
+<body>
+    <div class="main">
+
+        <img src="https://images.unsplash.com/photo-1526169882751-ed7a04feac73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHVycGxlJTIwbmlnaHQlMjBza3l8ZW58MHx8MHx8fDA%3D&w=1000&q=80" alt="" height="100%" width="100%">
+
+         <div class="form">
+            <div id="text" class="text"></div>
+
+            <body onload='document.form1.text1.focus()'>
+               <h3>Input an email and Submit :</h3>
+               <form class="fm" name = "form1" action = "#">
+                  <ul>
+                     <li><input type = 'text' name = 'text1'/></li>
+                     <li></li><br><br>
+                     <li class="submit"><input type = "submit" name = "submit" value = "Submit" onclick = "ValidateEmail(document.form1.text1)"/>
+                     <li></li>
+                  </ul>
+               </form>
+         </div>
+     </div>     
+</body>
+
+
+<script>
+var syntax= "WELCOME TO GITHUB WE ARE HERE FOR YOU PLEAZ ENTER YOUR EMAIL HERE"; 
+var array = syntax.split("");
+var timer;
+
+function Loop () {
+	if (array.length > 0) {
+		document.getElementById("text").innerHTML += array.shift();
+	} else {
+		clearTimeout(timer);
+			}
+	loopTimer = setTimeout('Loop()',100); 
+}
+Loop();
+
+
+
+function ValidateEmail(inputText)
+      {
+         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+         if(inputText.value.match(mailformat))
+         {
+            document.write("Valid email address!");
+            document.form1.text1.focus();
+            return true;
+         }
+         else
+         {
+            document.write("You have entered an invalid email address!");
+            document.form1.text1.focus();
+            return false;
+         }
+      }
+
+
+</script>
+</html>

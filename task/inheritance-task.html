@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+  // class Father
+  // {
+  //   father()
+  //   {
+  //       var f =100;
+  //       document.write("parent property" + " = " + f + "%" + "<br>");
+  //   }
+  // }
+
+
+  // class Mother extends Father
+  // {
+  //   mother(m)
+  //   {
+  //   var son = document.write("child property" + " = " +( m-70)+ "%" + "<br>");
+  //   var da = document.write("child property" + " = " + (m-30) + "%"+ "<br>")       
+  //   }
+  // }
+
+  // var fat = new Father;
+  // var mot = new Mother;
+
+  // fat.father()
+  // mot.father(100);
+  // mot.mother(100)
+
+
+
+class Father
+  { 
+    father()
+    {
+        var f = 100;
+        document.write( "Parent property" + " = " + f + " %");
+        document.write("<br> ");
+    }
+  }
+
+class Mother extends Father
+       {   
+        property(total,mi)
+            {
+                var pp =  total - mi; 
+
+                document.write("Child property" + " = " + pp + " %");
+                document.write("<br> ");
+            }        
+       }
+
+      var fat = new Father;
+      fat.father()
+      var mom = new Mother;
+      mom.father()
+      const daughter = new Mother;
+      const son = new Mother;
+      daughter.property(100,70);
+      son.property(100,30);
+ 
+ 
+</script>
+</body>
+</html>

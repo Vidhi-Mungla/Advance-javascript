@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>   
+</body>
+<script>
+
+class Parent
+ {
+  constructor(name, initialProperty) 
+  {
+    this.name = name;
+    this.property = initialProperty;
+  }
+}
+class Child extends Parent 
+{
+  constructor(name, parent, inheritancePercentage) 
+  {
+    super(name, parent.property * (inheritancePercentage / 100));
+  }
+}
+const father = new Parent('Father', 100);
+const mother = new Parent('Mother', 100);
+const daughter = new Child('Daughter', mother, 60);
+const son = new Child('Son', mother, 30);
+
+father.property = 0;
+mother.property = 10;
+
+console.log(`Father's Property: ${father.property}%`);
+console.log(`Mother's Property: ${mother.property}%`);
+console.log(`Daughter's Property: ${daughter.property}%`);
+console.log(`Son's Property: ${son.property}%`);
+
+</script>
+</html>

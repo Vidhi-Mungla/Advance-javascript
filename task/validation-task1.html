@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <form id="nameForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span id="nameError" style="color: red;"></span><br><br>
+    
+    mobile no:
+    <input id="inp" type="text" name="" onblur="val(this)">
+    <div id="res"></div>
+  </form>
+
+  <script>
+    var nameInput = document.getElementById("name");
+    var nameError = document.getElementById("nameError");
+    document.getElementById("res").style.color = 'red';
+
+function val(elem)
+{
+    if (isNaN(elem.value))
+    {
+        document.getElementById('res').innerText = "please enter only numbers"
+    }
+    else
+    {
+        document.getElementById('res').innerText = "";
+        if(elem.value.length > 10)
+        {
+            document.getElementById('res').innerText = "please enter only ten digits"
+        }
+        else
+        {
+            document.getElementById('res').innerText="";
+        }
+    }
+}
+
+
+
+
+    nameInput.addEventListener("blur", function ()
+     {
+      validateForm();
+    });
+
+    function validateForm() {
+      var name = nameInput.value;
+
+      var abc = /^[a-zA-Z]+$/;
+
+      if (name.trim() === "") 
+      {
+        nameError.innerHTML = "Name is required";
+        return false;
+      }
+
+      if (!abc.test(name)) 
+      {
+        nameError.innerHTML = "Name must contain only letters";
+        return false;
+      }
+
+      if (name.length < 2 || name.length > 5) 
+      {
+        nameError.innerHTML = "Name must be between 2 and 5 characters";
+        return false;
+      }
+
+      nameError.innerHTML = "";
+
+      return true;
+    }
+  </script>
+</body>
+</html>
