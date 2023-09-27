@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      
+arr =[{name:"harshit",age:12,course:"wd"},
+{name:"riddhi",age:22,course:"wd"},
+{name:"priyanshi",age:32,course:"wd"}];
+
+
+// arr.map((v)=>
+// {
+// console.log(v.name+ " " + v.age+ " " + v.course);
+// })
+
+
+document.write(
+     `<table border="1" style="background:red">
+      <tr>
+        <th>name</th>
+        <th>age</th>
+        <th>course</th>
+        </tr>
+      <table>`)
+
+arr.map((v,i)=>
+{
+  document.write(
+  `<table border ="1">
+   <tr>
+    <td>${v.name}</td>
+    <td>${v.age}</td>
+    <td>${v.course}</td>
+    </tr>
+
+    <table>`)
+})
+
+    </script>
+</body>
+</html>
