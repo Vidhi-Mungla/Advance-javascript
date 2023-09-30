@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        class father {
+            fatherproper(a) {
+                this.a = a;
+
+                console.log("Father Poper " + this.a);
+
+
+            }
+        }
+
+        class mother extends father {
+
+
+
+            static mother_proper = 10;
+
+            mother_proper() {
+                this.tot = this.a - mother.mother_proper;
+                console.log("mother contain proper " + this.tot);
+            }
+
+        }
+
+        class daug extends mother {
+            static daugh_proper = 30;
+
+            mother_part1() {
+                this.total = this.tot - daug.daugh_proper;
+                console.log("mother contain proper " + this.total);
+            }
+        }
+        class bro extends mother {
+            static bro_proper = 60;
+            mother_part2() {
+                this.tat = this.total - bro.bro_proper;
+                console.log("mother property " + this.tat)
+            }
+        }
+        const m1 = new daug();
+        const b1 = new bro();
+        m1.fatherproper(100);
+        console.log("Mother Proper " + mother.mother_proper)
+        m1.mother_proper();
+        console.log("daughter proper " + daug.daugh_proper)
+        m1.mother_part1();
+        console.log("brother property " + bro.bro_proper)
+        b1.mother_part2();
+
+    </script>
+
+</body>
+
+</html>
