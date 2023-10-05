@@ -8,7 +8,6 @@
 <body>
 
     <script>
-
         // Promise==> built in class 
 
         const PromiseMe = new Promise(function(res,err){
@@ -27,8 +26,15 @@
 
         PromiseMe
         .then(
-            function(r){console.log(r)},
-            function(e){console.log(e)}
+            function(r)
+            {
+                console.log(r)
+            },
+
+            function(e)
+            {
+                console.log(e)
+            }
             ) 
 
 

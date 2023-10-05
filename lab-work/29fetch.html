@@ -22,11 +22,17 @@
 
          fetch('sample.txt')
 
-        .then((res)=>{return res.text()}) //--> sample file data print
+        .then((res)=>
+        {
+            return res.text()
+        }) //--> sample file data print
 
-        .then((data)=>{console.log(data)})  
+
+        .then((data)=>
+         {
+            console.log(data)
+         })  
     
-        
     </script>
 
     
