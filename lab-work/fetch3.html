@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="b1" onclick="GetAPI()">Get API</button>
+    <div id="data"></div>
+</body>
+<script>
+    const btn = document.getElementById("b1");
+    const dataDiv = document.getElementById("data");
+
+    function GetAPI() {
+
+        fetch('vidhi.json')
+        .then((res) => { return res.json() })
+        .then((data) => {
+            dataDiv.innerHTML = data.map((v) => {
+                return `${v.name}`;
+            }).join(' ');
+
+        })
+    }
+</script>
+</html>

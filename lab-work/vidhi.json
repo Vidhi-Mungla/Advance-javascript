@@ -1,0 +1,11 @@
+[
+    {
+        "name":"vidhi" ,"age":21,"course":"wd"
+    },
+    {
+        "name":"riddhi" ,"age":20,"course":"react"
+    },
+    {
+        "name":"nidhi" ,"age":22,"course":"java"
+    }
+]
